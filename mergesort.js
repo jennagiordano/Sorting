@@ -30,37 +30,16 @@ function merge(firstHalf, secondHalf) {
 }
 
 function mergeSort(array) {
-  //base case array . length === 1, return arr
-
-  //left , right = split(array)
-  //let array = merge(left, right)
-  //return mergeSort(array)
-
   if (array.length === 1) {
     return array;
   } else {
-    let [left, right] = split(array);
-    console.log("left: ", left);
-    console.log("right: ", right);
-    array = merge(left, right);
-    console.log("array: ", array);
-    //return mergeSort(array);
+    let [leftArr, rightArr] = split(array);
+    return merge(mergeSort(leftArr), mergeSort(rightArr));
   }
-  // let sortedArray = [];
-  // if (sortedArray.length === array.length) {
-  //   return sortedArray;
-  // } else {
-  //   let firstHalf = [];
-  //   let secondHalf = [];
-
-  //   while (sortedArray.length === 0) {
-  //     while (firstHalf.length > 1) {
-  //       firstHalf, (secondHalf = split(array));
-  //     }
-  //     sortedArray.push(merge(firstHalf, secondHalf));
-  //   }
-  // }
-  // console.log(sortedArray);
 }
 
-//mergeSort([2, 6, 5, 4, 3]);
+console.log("result of merge Sort: ", mergeSort([2, 5, 1, 3, 7, 4, 6, 8, 9]));
+
+console.log("result of merge Sort: ", mergeSort([2, 5, 1, 3, 7, 4, 6, 8, 9]));
+
+console.log("result of merge Sort: ", mergeSort([2, 5, 1, 3, 7, 4, 6, 8, 9]));
